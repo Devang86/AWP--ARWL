@@ -382,7 +382,7 @@ if selected:
             for step in data["steps"]:
                 proc_html = step["procedure"].replace("\n","<br>")
                 assertions_text = "  |  ".join(
-                    f"<b>{ASSERTION_MAP.get(c,c)}</b>" for c in step["assertions"])
+                    ASSERTION_MAP.get(c,c) for c in step["assertions"])
 
                 full_ref = step.get("sa_ref","")
                 sa_parts    = " | ".join(p.strip() for p in full_ref.split("|")
